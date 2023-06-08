@@ -12,7 +12,7 @@ Build the following functions in your linked list class:
 - [x] 3. `size` returns the total number of nodes in the list
 - [x] 4. `head` returns the first node in the list
 - [x] 5. `tail` returns the last node in the list
-- [ ] 6. `at(index)` returns the node at the given `index`
+- [x] 6. `at(index)` returns the node at the given `index`
 - [ ] 7. `pop` removes the last element from the list
 - [ ] 8. `contains(value)` returns true if the passed in value is in the list and otherwise returns false.
 - [ ] 9. `find(value)` returns the index of the node containing value, or null if not found.
@@ -25,9 +25,3 @@ Build the following functions in your linked list class:
 - [ ] 2. `removeAt(index)` that removes the node at the given `index`.
 
 **Extra Credit Tip:** When you insert or remove a node, consider how it will affect the existing nodes. Some of the nodes will need their `nextNode` link updated.
-
-## Notes
-- class point 2:
-  - *"set both as `null` by default."* <- not sure if I implemented this correctly at this point
-
-- At this point I've decided that I'll make this into a separate repo instead of keeping it inside my practice repo

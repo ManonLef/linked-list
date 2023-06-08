@@ -33,7 +33,7 @@ export default class LinkedList {
     let node = this.listHead;
     let total = 0
     while (node) {
-      total++
+      total += 1
       node = node.nextNode
     }
     return total
@@ -47,6 +47,16 @@ export default class LinkedList {
     let node = this.listHead
     while (node.nextNode) {
       node = node.nextNode
+    }
+    return node
+  }
+
+  at(index) {
+    let current = 0
+    let node = this.listHead
+    while (current < index) {
+      node = node.nextNode
+      current += 1
     }
     return node
   }
@@ -67,3 +77,5 @@ console.log("head: ", list.head())
 console.log("total items: ", list.size())
 
 console.log("tail: ", list.tail())
+
+console.log("index: ", list.at(3))
