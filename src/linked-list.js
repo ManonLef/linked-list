@@ -42,6 +42,14 @@ export default class LinkedList {
   head() {
     return this.listHead
   }
+
+  tail() {
+    let node = this.listHead
+    while (node.nextNode) {
+      node = node.nextNode
+    }
+    return node
+  }
 }
 
 const list = new LinkedList();
@@ -57,3 +65,5 @@ console.log("updated list: ", list.listHead);
 console.log("head: ", list.head())
 
 console.log("total items: ", list.size())
+
+console.log("tail: ", list.tail())
