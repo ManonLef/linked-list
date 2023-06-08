@@ -2,15 +2,15 @@ import Node from "./node";
 
 export default class LinkedList {
   constructor(head = null) {
-    this.head = head;
+    this.listHead = head;
   }
 
   append(value) {
-    let node = this.head;
+    let node = this.listHead;
 
     // when no items in list, new node will be the head
     if (node === null) {
-      this.head = new Node(value);
+      this.listHead = new Node(value);
     } else {
       // iterate to end of the list and insert there.
       while (node.nextNode) {
@@ -21,22 +21,26 @@ export default class LinkedList {
   }
 
   prepend(value) {
-    const currentHead = this.head;
+    const currentHead = this.listHead;
 
     const newHead = new Node(value);
     newHead.nextNode = currentHead;
 
-    this.head = newHead;
+    this.listHead = newHead;
   }
 
   size() {
-    let node = this.head;
+    let node = this.listHead;
     let total = 0
     while (node) {
       total++
       node = node.nextNode
     }
     return total
+  }
+
+  head() {
+    return this.listHead
   }
 }
 
@@ -45,9 +49,11 @@ list.append("node");
 list.append("next node");
 list.append("next next node");
 list.append("next next next node")
-console.log("list: ", list.head);
+console.log("list: ", list.listHead);
 
 list.prepend("new head");
-console.log("updated list: ", list.head);
+console.log("updated list: ", list.listHead);
+
+console.log("head: ", list.head())
 
 console.log("total items: ", list.size())
