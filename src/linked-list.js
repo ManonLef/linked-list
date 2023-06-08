@@ -60,6 +60,17 @@ export default class LinkedList {
     }
     return node
   }
+
+  toString() {
+    let node = this.listHead
+    let consoleMsg = ""
+    while (node) {
+      consoleMsg += `( ${node.value} ) => `
+      node = node.nextNode
+    }
+    consoleMsg += `null`
+    console.log(consoleMsg)
+  }
 }
 
 const list = new LinkedList();
@@ -79,3 +90,5 @@ console.log("total items: ", list.size())
 console.log("tail: ", list.tail())
 
 console.log("index: ", list.at(3))
+
+list.toString()
