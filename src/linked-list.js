@@ -5,15 +5,12 @@ export default class LinkedList {
     this.head = head;
   }
 
-  // adds a new node to the end of the list
   append(value) {
     let node = this.head;
 
-    // when no items in list, new node will be the head as well
+    // when no items in list, new node will be the head
     if (node === null) {
-      console.log("head is null");
       this.head = new Node(value);
-      console.log("head is now", this.head);
     } else {
       // iterate to end of the list and insert there.
       while (node.nextNode) {
@@ -22,9 +19,23 @@ export default class LinkedList {
       node.nextNode = new Node(value);
     }
   }
+
+  prepend(value) {
+    const currentHead = this.head;
+
+    const newHead = new Node(value);
+    newHead.nextNode = currentHead;
+
+    this.head = newHead;
+  }
 }
 
 const list = new LinkedList();
-list.append("noob");
-list.append("another noob");
-list.append("another another noob");
+list.append("node");
+list.append("next node");
+list.append("next next node");
+list.append("next next next node")
+console.log("list: ", list.head);
+
+list.prepend("new head");
+console.log("updated list: ", list.head);
