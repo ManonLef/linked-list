@@ -28,6 +28,16 @@ export default class LinkedList {
 
     this.head = newHead;
   }
+
+  size() {
+    let node = this.head;
+    let total = 0
+    while (node) {
+      total++
+      node = node.nextNode
+    }
+    return total
+  }
 }
 
 const list = new LinkedList();
@@ -39,3 +49,5 @@ console.log("list: ", list.head);
 
 list.prepend("new head");
 console.log("updated list: ", list.head);
+
+console.log("total items: ", list.size())
