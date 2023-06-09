@@ -82,6 +82,18 @@ export default class LinkedList {
     return false;
   }
 
+  find(value) {
+    let index = 0
+    let node = this.listHead
+    while (node.nextNode) {
+      if (node.value === value) return index
+      node = node.nextNode
+      index +=1
+    }
+    if (node.value === value) return index
+    return null
+  }
+
   toString() {
     let node = this.listHead;
     let consoleMsg = "";
@@ -121,3 +133,4 @@ list.pop();
 list.toString();
 
 console.log(list.contains("index 5 node"));
+console.log(list.find("index 5 node"));
