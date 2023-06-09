@@ -83,15 +83,32 @@ export default class LinkedList {
   }
 
   find(value) {
-    let index = 0
-    let node = this.listHead
+    let index = 0;
+    let node = this.listHead;
     while (node.nextNode) {
-      if (node.value === value) return index
-      node = node.nextNode
-      index +=1
+      if (node.value === value) return index;
+      node = node.nextNode;
+      index += 1;
     }
-    if (node.value === value) return index
-    return null
+    if (node.value === value) return index;
+    return null;
+  }
+
+  insertAt(value, index) {
+    let current = this.listHead;
+    let previous;
+    let currentIndex = 0;
+    // example index 3 insert new node
+    // we want index 2 node to change nextNode to a new node with said value
+    // previous number 3 will be the nextNode of the inserted one
+    while (currentIndex < index) {
+      previous = current
+      current = current.nextNode
+      currentIndex += 1
+    }
+    const newNode = new Node(value)
+    newNode.nextNode = current
+    previous.nextNode = newNode
   }
 
   toString() {
@@ -134,3 +151,7 @@ list.toString();
 
 console.log(list.contains("index 5 node"));
 console.log(list.find("index 5 node"));
+
+// test insertAt
+list.insertAt("new index 3 node", 3)
+list.toString()
