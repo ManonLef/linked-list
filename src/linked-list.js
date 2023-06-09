@@ -98,9 +98,6 @@ export default class LinkedList {
     let current = this.listHead;
     let previous;
     let currentIndex = 0;
-    // example index 3 insert new node
-    // we want index 2 node to change nextNode to a new node with said value
-    // previous number 3 will be the nextNode of the inserted one
     while (currentIndex < index) {
       previous = current
       current = current.nextNode
@@ -109,6 +106,23 @@ export default class LinkedList {
     const newNode = new Node(value)
     newNode.nextNode = current
     previous.nextNode = newNode
+  }
+
+  removeAt(index) {
+    // example
+    // we want to remove the current index 3
+    // we want to set nextNode of current index 2 to current index 4
+    // remove nextNode from current index 3
+    let current = this.listHead
+    let previous;
+    let currentIndex = 0
+    while (currentIndex < index) {
+      previous = current
+      current = current.nextNode
+      currentIndex += 1
+    }
+    const next = current.nextNode
+    previous.nextNode = next
   }
 
   toString() {
@@ -148,10 +162,26 @@ list.toString();
 // remove last item
 list.pop();
 list.toString();
+console.log("total items: ", list.size());
 
 console.log(list.contains("index 5 node"));
 console.log(list.find("index 5 node"));
 
 // test insertAt
+console.log("///")
+console.log("test insert at index")
 list.insertAt("new index 3 node", 3)
 list.toString()
+console.log("total items: ", list.size());
+console.log("test complete")
+console.log("///")
+
+// test removeAt
+console.log("test remove at index")
+list.removeAt(3)
+list.toString()
+console.log(list)
+console.log("total items: ", list.size());
+console.log("test complete")
+console.log("///")
+
