@@ -71,24 +71,40 @@ export default class LinkedList {
     consoleMsg += `null`
     console.log(consoleMsg)
   }
+
+  pop() {
+    let current = this.listHead;
+    let previous;
+    while (current.nextNode) {
+      previous = current
+      current = current.nextNode
+    }
+    previous.nextNode = null
+  }
 }
 
 const list = new LinkedList();
-list.append("node");
-list.append("next node");
-list.append("next next node");
-list.append("next next next node")
-console.log("list: ", list.listHead);
+list.append("index 1 node");
+list.append("index 2 node");
+list.append("index 3 node")
+list.append("index 4 node")
+list.append("index 5 node")
+list.append("index 6 node")
 
 list.prepend("new head");
-console.log("updated list: ", list.listHead);
+
+console.log("list: ", list.listHead);
 
 console.log("head: ", list.head())
 
-console.log("total items: ", list.size())
-
 console.log("tail: ", list.tail())
 
-console.log("index: ", list.at(3))
+console.log("total items: ", list.size())
 
+console.log("index 3: ", list.at(3))
+
+list.toString()
+
+// remove last item
+list.pop()
 list.toString()

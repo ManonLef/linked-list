@@ -13,7 +13,7 @@ Build the following functions in your linked list class:
 - [x] 4. `head` returns the first node in the list
 - [x] 5. `tail` returns the last node in the list
 - [x] 6. `at(index)` returns the node at the given `index`
-- [ ] 7. `pop` removes the last element from the list
+- [x] 7. `pop` removes the last element from the list
 - [ ] 8. `contains(value)` returns true if the passed in value is in the list and otherwise returns false.
 - [ ] 9. `find(value)` returns the index of the node containing value, or null if not found.
 - [x] 10. `toString` represents your LinkedList objects as strings, so you can print them out and preview them in the console.
@@ -25,3 +25,7 @@ Build the following functions in your linked list class:
 - [ ] 2. `removeAt(index)` that removes the node at the given `index`.
 
 **Extra Credit Tip:** When you insert or remove a node, consider how it will affect the existing nodes. Some of the nodes will need their `nextNode` link updated.
+
+## Notes
+
+- [ ] go through functions to make sure no errors are thrown for empty lists
